@@ -14,7 +14,6 @@ body {
     color: $body-text-color;
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
-    height: 2000px;
 }
 
 .container--lg {
@@ -28,25 +27,43 @@ body {
 .title-lg {
     font-size: 50px;
     line-height: 62px;
+    @media (max-width: 1400px) {
+        font-size: calc(30px + (50 - 30) * ((100vw - 320px) / (1400 - 320)));
+    }
 }
 .title-md {
     font-size: 40px;
+    @media (max-width: 1400px) {
+        font-size: calc(25px + (40 - 25) * ((100vw - 320px) / (1400 - 320)));
+    }
 }
 .title-sm {
     font-size: 30px;
+    @media (max-width: 1400px) {
+        font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1400 - 320)));
+    }
 }
 .light {
     color: $white-text-color;
 }
 p {
     line-height: 30px;
+    @media (max-width: 1400px) {
+        font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1400 - 320)));
+    }
 }
 .btn {
     background: $btn-bg-color;
     padding: 26px 70px;
+    @media (max-width: 1400px) {
+        font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1400 - 320)));
+    }
 }
 a {
     color: $body-text-color;
+    @media (max-width: 1400px) {
+        font-size: calc(8px + (16 - 8) * ((100vw - 320px) / (1400 - 320)));
+    }
 }
 
 .header {
@@ -75,6 +92,9 @@ a {
     &__menu-items {
         display: flex;
         justify-content: space-between;
+        @media (max-width: 1400px) {
+            font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1400 - 320)));
+        }
     }
 
     &__content {
@@ -300,6 +320,7 @@ a {
     &__inner {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
     &__content-left {
         flex-basis: 45%;
