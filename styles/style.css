@@ -50,7 +50,7 @@ body {
   }
 }
 
-@media (max-width: 1400px) {
+@media (min-width: 0) {
   .title-lg {
     font-size: calc(30px + (50 - 30) * ((100vw - 320px) / (1400 - 320)));
     line-height: calc(30px + (62 - 30) * ((100vw - 320px) / (1400 - 320)));
@@ -64,7 +64,7 @@ body {
   }
 }
 
-@media (max-width: 1400px) {
+@media (min-width: 0) {
   .title-md {
     font-size: calc(25px + (40 - 25) * ((100vw - 320px) / (1400 - 320)));
   }
@@ -81,7 +81,7 @@ body {
   font-size: 30px;
 }
 
-@media (max-width: 1400px) {
+@media (min-width: 0) {
   .title-sm {
     font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1400 - 320)));
   }
@@ -98,7 +98,7 @@ body {
   color: white;
 }
 
-@media (max-width: 1400px) {
+@media (min-width: 0) {
   p {
     font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1400 - 320)));
     line-height: calc(10px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
@@ -116,7 +116,7 @@ body {
   background: #cc8b86;
 }
 
-@media (max-width: 1400px) {
+@media (min-width: 0) {
   .btn {
     font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1400 - 320)));
   }
@@ -150,7 +150,7 @@ a {
   color: #533738;
 }
 
-@media (max-width: 1400px) {
+@media (min-width: 0) {
   a {
     font-size: calc(8px + (16 - 8) * ((100vw - 320px) / (1400 - 320)));
   }
@@ -1130,6 +1130,12 @@ a {
   padding-bottom: 12px;
 }
 
+@media (min-width: 1401px) {
+  .footer__input {
+    min-height: 50px;
+  }
+}
+
 .footer__input:nth-of-type(2) {
   margin-top: 25px;
 }
@@ -1148,6 +1154,44 @@ a {
 
 .footer__input::placeholder {
   color: #f6ede9;
+}
+
+@media (min-width: 0) {
+  .footer__input::-webkit-input-placeholder {
+    font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1400 - 320)));
+    line-height: calc(10px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+  }
+  .footer__input:-ms-input-placeholder {
+    font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1400 - 320)));
+    line-height: calc(10px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+  }
+  .footer__input::-ms-input-placeholder {
+    font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1400 - 320)));
+    line-height: calc(10px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+  }
+  .footer__input::placeholder {
+    font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1400 - 320)));
+    line-height: calc(10px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+  }
+}
+
+@media (max-width: 575px) {
+  .footer__input::-webkit-input-placeholder {
+    font-size: calc(15px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+    line-height: calc(15px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+  }
+  .footer__input:-ms-input-placeholder {
+    font-size: calc(15px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+    line-height: calc(15px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+  }
+  .footer__input::-ms-input-placeholder {
+    font-size: calc(15px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+    line-height: calc(15px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+  }
+  .footer__input::placeholder {
+    font-size: calc(15px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+    line-height: calc(15px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
+  }
 }
 
 .footer__paragraph {
