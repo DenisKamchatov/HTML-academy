@@ -1042,12 +1042,31 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+
+@media (min-width: 576px) {
+  .footer__inner {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer__inner {
+    width: 85%;
+    margin: 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1061,6 +1080,19 @@ a {
 @media (max-width: 767px) {
   .footer__content-left {
     padding: 20px 20px 10px 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer__content-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 0;
   }
 }
 
@@ -1175,6 +1207,13 @@ a {
   }
 }
 
+@media (max-width: 575px) {
+  .footer__inner-text {
+    font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1400 - 320)));
+    line-height: calc(10px + (20 - 10) * ((100vw - 320px) / (1400 - 320)));
+  }
+}
+
 @media (min-width: 992px) {
   .footer__inner-text--center {
     -ms-flex-preferred-size: 60%;
@@ -1182,9 +1221,22 @@ a {
   }
 }
 
+@media (max-width: 575px) {
+  .footer__inner-text--center {
+    font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1400 - 320)));
+    line-height: calc(10px + (20 - 10) * ((100vw - 320px) / (1400 - 320)));
+  }
+}
+
 @media (min-width: 992px) {
   .footer__inner-text:last-of-type {
     text-align: end;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer__content-image {
+    padding-bottom: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */

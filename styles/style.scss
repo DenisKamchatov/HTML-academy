@@ -675,8 +675,17 @@ a {
 
     &__inner {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+
+        @media (min-width: $screen-sm) {
+            justify-content: space-between;
+            align-items: center;
+        }
+        @media (max-width: $screen-xs-max) {
+            width: 85%;
+            margin: 0 auto;
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &__content-left {
         @media (min-width: $screen-md) {
@@ -685,6 +694,11 @@ a {
         }
         @media (max-width: $screen-sm-max) {
             padding: 20px 20px 10px 0;
+        }
+        @media (max-width: $screen-xs-max) {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
         }
     }
     &__title {
@@ -749,15 +763,28 @@ a {
         @media (min-width: $screen-lg) {
             flex-basis: 20%;
         }
+        @media (max-width: $screen-xs-max) {
+            font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1400 - 320)));
+            line-height: calc(10px + (20 - 10) * ((100vw - 320px) / (1400 - 320)));
+        }
     }
     &__inner-text--center {
         @media (min-width: $screen-lg) {
             flex-basis: 60%;
         }
+        @media (max-width: $screen-xs-max) {
+            font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1400 - 320)));
+            line-height: calc(10px + (20 - 10) * ((100vw - 320px) / (1400 - 320)));
+        }
     }
     &__inner-text:last-of-type {
         @media (min-width: $screen-lg) {
             text-align: end;
+        }
+    }
+    &__content-image {
+        @media (max-width: $screen-xs-max) {
+            padding-bottom: 20px;
         }
     }
 }
