@@ -119,17 +119,20 @@ a {
         display: flex;
         justify-content: space-between;
         padding-bottom: 20px;
+        align-items: flex-start;
     }
 
     &__main-img {
         display: block;
+        width: 100%;
+        height: auto;
     }
 
     &__main-text {
         p:nth-child(2) {
             padding-top: 45px;
         }
-        margin-left: 65px;
+        padding-left: 65px;
     }
 
     &__achievements {

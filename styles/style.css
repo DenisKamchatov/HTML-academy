@@ -159,14 +159,19 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-bottom: 20px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .about__main-img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 .about__main-text {
-  margin-left: 65px;
+  padding-left: 65px;
 }
 
 .about__main-text p:nth-child(2) {
