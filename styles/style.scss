@@ -8,6 +8,14 @@ $body-bg-color: #f6ede9;
 $pink-bg-color: #e2c4ba;
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+$screen-xs: 0px;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+
+$screen-xs-max: 575px;
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
 
 body {
     background: $body-bg-color;
@@ -17,18 +25,29 @@ body {
 }
 
 .container--lg {
-    width: 93%;
     margin: 0 auto;
+    @media (max-width: $screen-lg-max) {
+        padding: 0 25px 0 25px;
+    }
+    @media (min-width: $screen-xl) {
+        width: 93%;
+    }
 }
 .container--md {
-    width: 80%;
     margin: 0 auto;
+    @media (max-width: $screen-lg-max) {
+        padding: 0 50px 0 50px;
+    }
+    @media (min-width: $screen-xl) {
+        width: 80%;
+    }
 }
 .title-lg {
     font-size: 50px;
     line-height: 62px;
     @media (max-width: 1400px) {
         font-size: calc(30px + (50 - 30) * ((100vw - 320px) / (1400 - 320)));
+        line-height: calc(30px + (62 - 30) * ((100vw - 320px) / (1400 - 320)));
     }
 }
 .title-md {
@@ -50,13 +69,19 @@ p {
     line-height: 30px;
     @media (max-width: 1400px) {
         font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1400 - 320)));
+        line-height: calc(10px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
     }
 }
 .btn {
     background: $btn-bg-color;
-    padding: 26px 70px;
     @media (max-width: 1400px) {
         font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1400 - 320)));
+    }
+    @media (min-width: $screen-lg) {
+        padding: 26px 70px;
+    }
+    @media (max-width: $screen-md-max) {
+        padding: 16px 50px;
     }
 }
 a {
@@ -75,9 +100,16 @@ a {
     }
 
     &__inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @media (min-width: $screen-lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @media (max-width: $screen-md-max) {
+            .header__menu {
+                display: none;
+            }
+        }
     }
 
     &__logo {
@@ -98,11 +130,21 @@ a {
     }
 
     &__content {
-        padding: 100px 0 170px 0;
+        @media (min-width: $screen-lg) {
+            padding: 100px 0 170px 0;
+        }
+        @media (max-width: $screen-md-max) {
+            padding: 40px 0 50px 0;
+        }
     }
 
     &__content-inner {
-        max-width: 45%;
+        @media (min-width: $screen-lg) {
+            max-width: 45%;
+        }
+        @media (max-width: $screen-md-max) {
+            max-width: 60%;
+        }
     }
     &__content-text {
         padding: 30px 0;
@@ -110,34 +152,78 @@ a {
 }
 
 .about {
+    @media (min-width: $screen-lg) {
+        padding-top: 70px;
+    }
+    @media (max-width: $screen-md-max) {
+        padding-top: 50px;
+    }
     &__title {
         text-align: center;
-        margin: 70px 0 50px 0;
+        @media (min-width: $screen-lg) {
+            padding-bottom: 50px;
+        }
+        @media (max-width: $screen-md-max) {
+            padding-bottom: 30px;
+        }
+        @media (max-width: $screen-sm-max) {
+            margin: 30px 0 20px 0;
+        }
     }
 
     &__main {
         display: flex;
-        justify-content: space-between;
-        padding-bottom: 20px;
-        align-items: flex-start;
+
+        @media (min-width: $screen-lg) {
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 20px;
+        }
+        @media (max-width: $screen-md-max) {
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 45px;
+        }
     }
 
     &__main-img {
         display: block;
-        width: 100%;
         height: auto;
+        @media (min-width: $screen-lg) {
+            width: 100%;
+        }
+        @media (max-width: $screen-md-max) {
+            width: 50%;
+        }
     }
 
     &__main-text {
         p:nth-child(2) {
-            padding-top: 45px;
+            padding-top: 25px;
         }
-        padding-left: 65px;
+        @media (min-width: $screen-lg) {
+            padding-left: 65px;
+        }
+        @media (max-width: $screen-md-max) {
+            padding: 0 70px;
+            padding-top: 30px;
+        }
+        @media (max-width: $screen-sm-max) {
+            padding: 0 70px;
+        }
     }
 
     &__achievements {
         background: $brown-bg-color;
-        padding: 90px 0;
+        @media (min-width: $screen-lg) {
+            padding: 90px 0;
+        }
+        @media (max-width: $screen-md-max) {
+            padding: 70px 0;
+        }
+        @media (max-width: $screen-sm-max) {
+            padding: 45px 0;
+        }
     }
     &__achievements-items {
         display: flex;
@@ -147,11 +233,29 @@ a {
 }
 
 .works {
-    padding-bottom: 70px;
-    padding-top: 65px;
+    @media (min-width: $screen-lg) {
+        padding-bottom: 70px;
+        padding-top: 65px;
+    }
+    @media (max-width: $screen-md-max) {
+        padding-bottom: 45px;
+        padding-top: 40px;
+    }
+    @media (max-width: $screen-sm-max) {
+        padding-bottom: 30px;
+        padding-top: 35px;
+    }
 
     &__title {
-        padding-bottom: 50px;
+        @media (min-width: $screen-lg) {
+            padding-bottom: 50px;
+        }
+        @media (max-width: $screen-md-max) {
+            padding-bottom: 30px;
+        }
+        @media (max-width: $screen-sm-max) {
+            padding-bottom: 20px;
+        }
     }
 
     &__main {
@@ -162,6 +266,14 @@ a {
             "second-image second-image third-image";
         grid-auto-flow: dense;
         grid-gap: 20px;
+        @media (max-width: $screen-md-max) {
+            grid-template-rows: 300px 300px;
+            grid-gap: 10px;
+        }
+        @media (max-width: $screen-sm-max) {
+            grid-template-rows: 200px 200px;
+            grid-gap: 6px;
+        }
     }
 
     &__info {
@@ -171,14 +283,27 @@ a {
         width: 100%;
         height: 100%;
         background-color: rgba(100, 72, 69, 0.8);
-        padding: 85px 35px 0;
-
         h1 {
             text-align: center;
         }
+
+        @media (min-width: $screen-lg) {
+            padding: 85px 35px 0;
+        }
+        @media (max-width: $screen-md-max) {
+            padding: 30px 20px 0;
+        }
+        @media (max-width: $screen-sm-max) {
+            padding: 20px 15px 0;
+        }
     }
     &__info-text {
-        padding-top: 35px;
+        @media (min-width: $screen-md) {
+            padding-top: 35px;
+        }
+        @media (max-width: $screen-sm-max) {
+            padding-top: 20px;
+        }
     }
 
     &__image-first {
@@ -194,7 +319,12 @@ a {
         grid-area: third-image;
     }
     &__next-block {
-        padding-top: 35px;
+        @media (min-width: $screen-md) {
+            padding-top: 35px;
+        }
+        @media (max-width: $screen-sm-max) {
+            padding-top: 30px;
+        }
     }
     &__next-link {
         display: flex;
@@ -209,15 +339,36 @@ a {
 
 .how-works {
     background-color: $pink-bg-color;
-    padding: 60px 0 80px 0;
+    @media (min-width: $screen-lg) {
+        padding: 60px 0 80px 0;
+    }
+    @media (max-width: $screen-md-max) {
+        padding: 40px 0 60px 0;
+    }
+    @media (max-width: $screen-sm-max) {
+        padding: 25px 0 25px 0;
+    }
 
     &__team {
-        padding-bottom: 40px;
+        @media (min-width: $screen-md) {
+            padding-bottom: 40px;
+        }
+        @media (max-width: $screen-sm-max) {
+            padding-bottom: 25px;
+        }
     }
 
     &__title {
-        padding-bottom: 50px;
         text-align: center;
+        @media (min-width: $screen-lg) {
+            padding-bottom: 50px;
+        }
+        @media (max-width: $screen-md-max) {
+            padding-bottom: 30px;
+        }
+        @media (max-width: $screen-sm-max) {
+            padding-bottom: 20px;
+        }
     }
 
     &__items {
@@ -249,13 +400,20 @@ a {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        flex-basis: 23%;
+        flex-basis: 23.5%;
         max-width: 400px;
     }
     &__how-number {
         background-color: $num-bg-color;
-        width: 70px;
-        height: 70px;
+
+        @media (min-width: $screen-md) {
+            width: 70px;
+            height: 70px;
+        }
+        @media (max-width: $screen-sm-max) {
+            width: 50px;
+            height: 50px;
+        }
         border-radius: 100%;
         display: flex;
         justify-content: center;
@@ -268,10 +426,24 @@ a {
 }
 
 .reviews {
-    padding: 75px 0 65px 0;
+    @media (min-width: $screen-lg) {
+        padding: 75px 0 65px 0;
+    }
+    @media (max-width: $screen-md-max) {
+        padding: 45px 0 40px 0;
+    }
+    @media (max-width: $screen-sm-max) {
+        padding: 25px 0 25px 0;
+    }
+
     &__title {
         text-align: center;
-        padding-bottom: 50px;
+        @media (min-width: $screen-lg) {
+            padding-bottom: 50px;
+        }
+        @media (max-width: $screen-md-max) {
+            padding-bottom: 20px;
+        }
     }
 
     &__main {
@@ -282,12 +454,18 @@ a {
 
     &__btn {
         background-color: $btn-bg-color;
-        min-width: 72px;
-        height: 72px;
         border-radius: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        @media (min-width: $screen-md) {
+            min-width: 72px;
+            height: 72px;
+        }
+        @media (max-width: $screen-sm-max) {
+            min-width: 50px;
+            height: 50px;
+        }
     }
     &__btn:nth-of-type(1) {
         margin-right: 25px;
@@ -300,7 +478,12 @@ a {
     }
 
     p:not(:first-of-type) {
-        margin-top: 40px;
+        @media (min-width: $screen-md) {
+            margin-top: 40px;
+        }
+        @media (max-width: $screen-sm-max) {
+            margin-top: 15px;
+        }
     }
     &__text {
         padding-right: 20px;
@@ -326,13 +509,21 @@ a {
         align-items: center;
     }
     &__content-left {
-        flex-basis: 45%;
-        padding-right: 20px;
-        padding-top: 55px;
-        padding-left: 80px;
+        @media (min-width: $screen-md) {
+            padding: 55px 20px 20px 80px;
+            flex-basis: 45%;
+        }
+        @media (max-width: $screen-sm-max) {
+            padding: 20px 20px 10px 0;
+        }
     }
     &__title {
-        padding-bottom: 33px;
+        @media (min-width: $screen-md) {
+            padding-bottom: 33px;
+        }
+        @media (max-width: $screen-sm-max) {
+            padding-bottom: 20px;
+        }
     }
     &__form {
         display: flex;
@@ -356,22 +547,47 @@ a {
     }
     &__paragraph {
         opacity: 60%;
-        padding-bottom: 55px;
+
+        @media (min-width: $screen-md) {
+            padding-bottom: 55px;
+        }
+        @media (max-width: $screen-sm-max) {
+            padding-bottom: 20px;
+        }
     }
 
     &__bottom-inner {
         display: flex;
-        justify-content: space-between;
-        padding: 40px 0;
+
+        @media (min-width: $screen-lg) {
+            padding: 40px 0;
+            justify-content: space-between;
+        }
+        @media (max-width: $screen-md-max) {
+            padding: 20px 0;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    p:not(:first-of-type) {
+        @media (max-width: $screen-md-max) {
+            padding-top: 10px;
+        }
     }
 
     &__inner-text {
-        flex-basis: 20%;
+        @media (min-width: $screen-lg) {
+            flex-basis: 20%;
+        }
     }
     &__inner-text--center {
-        flex-basis: 60%;
+        @media (min-width: $screen-lg) {
+            flex-basis: 60%;
+        }
     }
     &__inner-text:last-of-type {
-        text-align: end;
+        @media (min-width: $screen-lg) {
+            text-align: end;
+        }
     }
 }
