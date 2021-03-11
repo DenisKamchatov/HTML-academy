@@ -117,6 +117,28 @@ a {
         font-size: calc(8px + (16 - 8) * ((100vw - 320px) / (1400 - 320)));
     }
 }
+.navigation {
+    flex-basis: 85%;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 1400px) {
+            font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1400 - 320)));
+        }
+    }
+    &__item {
+        a {
+            color: $body-text-color;
+            opacity: 80%;
+        }
+        a:hover {
+            opacity: 100%;
+            color: #362425;
+        }
+    }
+}
 
 .header {
     @media (min-width: $screen-xl) {
@@ -157,17 +179,7 @@ a {
         display: flex;
         align-items: center;
         flex-basis: 15%;
-    }
-    &__menu {
-        flex-basis: 85%;
-    }
-
-    &__menu-items {
-        display: flex;
-        justify-content: space-between;
-        @media (max-width: 1400px) {
-            font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1400 - 320)));
-        }
+        cursor: default;
     }
 
     &__content {
@@ -294,6 +306,8 @@ a {
 }
 
 .works {
+    max-width: 2000px;
+    margin: 0 auto;
     @media (min-width: $screen-lg) {
         padding-bottom: 70px;
         padding-top: 65px;
@@ -550,6 +564,8 @@ a {
 }
 
 .reviews {
+    max-width: 2000px;
+    margin: 0 auto;
     @media (min-width: $screen-lg) {
         padding: 75px 0 65px 0;
     }
@@ -573,7 +589,7 @@ a {
     &__main {
         @media (min-width: $screen-sm) {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
         @media (max-width: $screen-xs-max) {
@@ -675,6 +691,8 @@ a {
 
     &__inner {
         display: flex;
+        max-width: 2000px;
+        margin: 0 auto;
 
         @media (min-width: $screen-sm) {
             justify-content: space-between;
@@ -719,11 +737,16 @@ a {
         width: 100%;
     }
     &__input {
+        color: #f6ede9;
         background-color: $brown-bg-color;
         border-bottom: 1px solid $white-text-color;
         padding-bottom: 12px;
         @media (min-width: 1401px) {
             min-height: 50px;
+        }
+        @media (min-width: 0) {
+            font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1400 - 320)));
+            line-height: calc(10px + (30 - 10) * ((100vw - 320px) / (1400 - 320)));
         }
     }
     &__input:nth-of-type(2) {

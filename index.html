@@ -19,15 +19,15 @@
                         <img class="header__logo-img" src="./img/header-logo.png" alt="Логотип">
                         <span class="header__logo-text">SCANDI</span>
                     </div>
-                    <nav class="header__menu">
-                        <ul class="header__menu-items">
-                            <li class="header__menu-item"><a href="#about">О компании</a></li>
-                            <li class="header__menu-item"><a href="#works">Портфолио</a></li>
-                            <li class="header__menu-item"><a href="#team">Команда</a></li>
-                            <li class="header__menu-item"><a href="#how-works">Как мы работаем</a></li>
-                            <li class="header__menu-item"><a href="#reviews">Отзывы клиентов</a></li>
-                            <li class="header__menu-item"><a href="#application">Оставить заявку</a></li>
-                            <li class="header__menu-item"><a href="#tel">+7 (981) 857-46-24</a></li>
+                    <nav class="header__navigation navigation">
+                        <ul class="navigation__list">
+                            <li class="navigation__item"><a href="#about">О компании</a></li>
+                            <li class="navigation__item"><a href="#works">Портфолио</a></li>
+                            <li class="navigation__item"><a href="#team">Команда</a></li>
+                            <li class="navigation__item"><a href="#how-works">Как мы работаем</a></li>
+                            <li class="navigation__item"><a href="#reviews">Отзывы клиентов</a></li>
+                            <li class="navigation__item"><a href="#application">Оставить заявку</a></li>
+                            <li class="navigation__item"><a href="#tel">+7 (981) 857-46-24</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -179,8 +179,8 @@
                                 <h1 class="title-sm">2</h1>
                             </div>
                             <div class="how-works__how-text">
-                                <p>Знакомимся, выезжаем
-                                    на объект, утверждаем концепцию, подписывем договор.</p>
+                                <p>Подбираем мебель, текстиль, аксессуры. Делаем 3D-
+                                    зуализацию.</p>
                             </div>
                         </div>
                         <div class="how-works__how-item">
@@ -254,13 +254,13 @@
                                 в удобное вам время и ответит на все вопросы.</p>
                         </div>
 
-                        <form class="footer__form">
+                        <form class="footer__form" id="footer__form">
                             <input class="footer__input" type="text" name="name" id="name" placeholder="Ваше имя"
                                 required>
                             <input class="footer__input" type="tel" name="number" id="number"
                                 placeholder="Введите телефон" required>
                         </form>
-                        <input class="btn footer__btn" type="submit" name="submit" id="submit" value="Оставить заявку">
+                        <button class="btn footer__btn" type="submit" form="footer__form">Оставить заявку</button>
                     </div>
                     <div class="footer__content-image">
                         <img class="footer__image" src="./img/map.png" alt="Карта">
